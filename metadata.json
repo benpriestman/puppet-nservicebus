@@ -1,0 +1,15 @@
+{
+  "name": "puppet-nservicebus",
+  "version": "0.1.0",
+  "author": "benpriestman",
+  "summary": "Manages NServiceBus components on Windows",
+  "license": "Apache 2.0",
+  "source": "https://github.com/malaikah/puppet-nservicebus.git",
+  "project_page": "https://github.com/malaikah/puppet-nservicebus.git",
+  "issues_url": "https://github.com/malaikah/puppet-nservicebus/issues",
+  "dependencies": [
+    {"version_requirement":">=4.1.0","version_range":">= 1.0.0","name":"puppetlabs-stdlib"},
+    {"version_requirement":">=0.0.2","name":"rismoney-chocolatey"}
+  ]
+}
+
