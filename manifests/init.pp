@@ -41,7 +41,7 @@ class nservicebus (
 
   package{'NServiceBus.PowerShell':
     ensure    => $version,
-    provider  => 'chocolately',
+    provider  => 'chocolatey',
     source    => 'http://packages.nuget.org/v1/FeedService.svc/'
   }
 
