@@ -1,6 +1,8 @@
-# == Class: nservicebus
+# == Class: nservicebus::powershell_module
 #
-# Manages NServiceBus
+# Installs NServiceBus powershell tools.
+# The default behaviour is to install these from the Particular-maintained package in the public NuGet feed, using chocolately.
+# The package name, provider and source can all be customised, though.
 #
 # === Parameters
 #
@@ -35,10 +37,18 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class nservicebus  {
+class nservicebus::powershell_tools (
+  $package_name       = $nservicebus::params::powershell_tools_package_name,
+  $package_version    = $nservicebus::params::powershell_tools_version,
+  $package_provider   = $nservicebus::params::powershell_tools_installation_provider,
+  $package_source     = $nservicebus::params::powershell_tools_installation_source,
+) inherits nservicebus::params {
 
-  nservicebus::install{'MSMQ':}
-  nservicebus::install{'DTC':}
-  nservicebus::install{'PerformanceCounters':}
+  package{'NServiceBusPowershellTools':
+    name      => $package_name,
+    ensure    => $package_version,
+    provider  => $package_provider,
+    source    => $package_source
+  }
 
 }
