@@ -26,7 +26,7 @@ define nservicebus::install (
   exec{"install_nservicebus_${title}":
     provider  => 'powershell',
     command   => "${import_module}; Install-NServiceBus${component}",
-    onlyif    => "${import_module}; Test-NServiceBus${component}Installation",
+    unless    => "${import_module}; Test-NServiceBus${component}Installation",
     require   => Package['NServiceBusPowershellTools'],
   }
   
