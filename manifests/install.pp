@@ -12,7 +12,7 @@ define nservicebus::install (
   if $module_path == undef {
     case $nservicebus::powershell_tools::package_provider {
       'chocolatey': {
-        $real_module_path = '%ChocolateyInstall%'
+        $real_module_path = '${Env:\ChocolateyInstall}'
       }
       default:      {
         fail("I don't know where to find nservicebus powershell tools, when they are installed by ${nservicebus::powershell_tools::package_provider}")
