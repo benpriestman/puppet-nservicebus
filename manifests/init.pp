@@ -40,5 +40,6 @@ class nservicebus  {
   nservicebus::install{'MSMQ':}
   nservicebus::install{'DTC':}
   nservicebus::install{'PerformanceCounters':}
+  nservicebus::install{'RavenDB':}
 
 }
